@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-yellow-300 flex flex-col h-screen justify-center items-center">
+    <div class="loader mx-auto"></div>
+    <div class="text-2xl mt-4 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center">Please wait while we are generating Recommendations</div>
+    
+    <!-- Footer -->
+    <footer class="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-center mt-8 py-4 bg-yellow-300">
+        Created with ❤️ by Asparsh Raj
+    </footer>
+</body>
+</html>

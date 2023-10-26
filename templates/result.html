@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Add the tailwind CDN link in the head section -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body class="bg-yellow-300"> <!-- Use the bg-green-100 class to set the background color to a soothing green -->
+        <!-- Use the container class to center the content -->
+        <div class="container mx-auto">
+            <!-- Use the flex class to create a flexible layout where the child elements are displayed in a row -->
+            <form id="submitData" method="post" action="/search" class="flex"> <!-- Wrap the search bar and button in a <form> element, set the method and action attributes -->
+                <!-- Use the w-3/4 class to make the search bar take up 75% of the available width -->
+                <input type="text" class="w-3/4 p-2 m-4 rounded-lg border border-white text-black placeholder-gray-400" placeholder="Search" name="query"> <!-- Use the w-1/4, p-2, m-4 and bg-blue-500 classes to style the search button and make it take up 25% of the available width -->
+                <button type="submit" class="w-1/4 p-2 m-4 bg-blue-500 rounded-lg text-white">Search</button> <!-- Use the rounded-lg and text-white classes to make the button match the search bar -->
+            </form>
+            
+            
+            <!-- Use the grid class to create a grid container -->
+            <div class="grid grid-cols-5 gap-4">
+                <!-- Use the p-2 and bg-gray-800 classes to add some padding and background color to each item -->
+                {% for id, name in song_id_name %}
+                <div class="p-2 bg-gray-800 bg-opacity-50 rounded-lg">
+                    <div>
+                        <a href="https://open.spotify.com/track/{{ id }}">{{ name }}</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>    
+        </div>
+    </body>
+</html>

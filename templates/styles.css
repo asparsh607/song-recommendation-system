@@ -1,0 +1,67 @@
+/* For devices with width less than or equal to 640px */
+@media (max-width: 640px) {
+    /* Make the grid have only one column */
+    .grid-cols-5 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    /* Make the search bar take up the whole width and move it below the button */
+    .flex-1 {
+        flex: none;
+        width: 100%;
+        order: 2;
+    }
+
+    /* Make the button take up half of the width and move it above the search bar */
+    button {
+        flex: none;
+        width: 50%;
+        order: 1;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Reduce the padding and margin of the elements */
+    .p-2 {
+        padding: 0.5rem;
+    }
+
+    .m-4 {
+        margin: 1rem;
+    }
+}
+
+
+
+/* For devices with width less than or equal to 480px */
+@media (max-width: 480px) {
+    /* Make the grid have only one column */
+    .grid-cols-5 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+/* For devices with width less than or equal to 320px */
+@media (max-width: 320px) {
+    /* Make the button take up the whole width */
+    button {
+        width: 100%;
+    }
+}
+
+/* For desktops and PCs */
+@media (min-width: 1024px) {
+    /* Make the grid have more columns */
+    .grid-cols-5 {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    /* Increase the padding and margin of the elements */
+    .p-2 {
+        padding: 1rem;
+    }
+
+    .m-4 {
+        margin: 2rem;
+    }
+}
